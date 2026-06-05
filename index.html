@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO de Alta Conversão Global -->
+    <title>Free Mock Data Generator | Create JSON & SQL Test Data Online</title>
+    <meta name="description" content="Generate free, custom mock data structures instantly. Create fake user profiles, emails, names, and IDs in JSON or SQL formats for software testing.">
+    <meta name="keywords" content="mock data generator, fake data generator, json generator, test data, developer tools, generate sql insert, labs studio art">
+    <meta name="author" content="Labs Studio Art">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Free Custom Mock Data Generator">
+    <meta property="og:description" content="Generate random datasets for testing apps instantly. Export to JSON or SQL. Secure and local-first.">
+    <meta property="og:type" content="website">
+    
+    <style>
+        :root { --primary: #10b981; --bg: #0f172a; --card: #1e293b; --text: #f8fafc; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        .container { width: 100%; max-width: 950px; background: var(--card); padding: 30px; border-radius: 16px; border: 1px solid #334155; }
+        h1 { color: var(--primary); text-transform: uppercase; margin-top: 0; }
+        .setup-box { background: #0f172a; padding: 20px; border-radius: 10px; border: 1px solid #475569; margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+        label { font-weight: bold; color: #94a3b8; }
+        input, select { background: #1e293b; color: white; border: 1px solid #475569; padding: 8px 12px; border-radius: 6px; font-size: 14px; }
+        textarea { width: 100%; height: 350px; background: #0f172a; color: #34d399; border: 1px solid #475569; border-radius: 10px; padding: 20px; font-family: monospace; box-sizing: border-box; }
+        .controls { display: flex; gap: 12px; margin-top: 20px; }
+        button { padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; }
+        .btn-generate { background: var(--primary); color: #0f172a; }
+        .btn-generate:hover { background: #34d399; }
+        footer { margin-top: 40px; font-size: 12px; color: #64748b; text-align: center; }
+        footer a { color: #94a3b8; cursor: pointer; text-decoration: underline; margin: 0 10px; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; }
+        .modal-content { background: var(--card); padding: 30px; max-width: 600px; border-radius: 12px; border: 1px solid var(--primary); color: #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Mock Data Generator</h1>
+        
+        <!-- BANNER DE TOPO ADSTERRA -->
+        <div style="margin: 20px 0; text-align: center;">
+            <script>
+                atOptions = {
+                    'key' : '5b036d7d17184be656426ac33e533296',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+            </script>
+            <script src="https://www.highperformanceformat.com/5b036d7d17184be656426ac33e533296/invoke.js"></script>
+        </div>
+
+        <p>Generate highly customizable sample datasets for your database models and API testing instantly.</p>
+        
+        <div class="setup-box">
+            <div>
+                <label>Rows to Generate: </label>
+                <input type="number" id="rowCount" value="10" min="1" max="100" style="width: 70px;">
+            </div>
+            <div>
+                <label>Format: </label>
+                <select id="outputFormat">
+                    <option value="json">JSON Array</option>
+                    <option value="sql">SQL INSERTs</option>
+                </select>
+            </div>
+        </div>
+
+        <textarea id="outputDisplay" placeholder="Your generated data will appear here..." readonly></textarea>
+        
+        <div class="controls">
+            <button class="btn-generate" onclick="generateMockData()">Generate Dataset</button>
+            <button onclick="downloadData()" style="background:#38bdf8; color:#0f172a;">Download File</button>
+            <!-- LINK CRUZADO DE VOLTA PARA O PRIMEIRO SITE (SEO CROSS-LINKING) -->
+            <button onclick="window.open('https://labs-studio-art.github.io/easy-convert/', '_blank')" style="background:#475569; color:white; margin-left: auto;">Format JSON Tool 🔗</button>
+        </div>
+    </div>
+
+    <!-- BANNER DE RODAPÉ ADSTERRA -->
+    <div style="margin: 30px 0; text-align: center;">
+        <script>
+            atOptions = {
+                'key' : '5b036d7d17184be656426ac33e533296',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+            };
+        </script>
+        <script src="https://www.highperformanceformat.com/5b036d7d17184be656426ac33e533296/invoke.js"></script>
+    </div>
+
+    <footer>
+        <p>© 2026 Labs Studio Art | Mock Data Factory.</p>
+        <p>
+            Support: <a href="mailto:zcheaproducts@gmail.com">zcheaproducts@gmail.com</a> | 
+            <a onclick="showModal('policy')">Privacy Policy</a> | 
+            <a onclick="showModal('terms')">Terms of Service</a>
+        </p>
+    </footer>
+
+    <div id="modal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <h2 id="modalTitle" style="color:var(--primary)"></h2>
+            <p id="modalText"></p>
+            <button onclick="closeModal()" style="margin-top:20px; background:var(--primary); color:#0f172a; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const firstNames = ["Liam", "Olivia", "Noah", "Emma", "Oliver", "Ava", "Elijah", "Charlotte", "William", "Sophia", "Lucas", "Mia"];
+        const lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez"];
+        const domains = ["gmail.com", "yahoo.com", "outlook.com", "labsart.org", "example.com"];
+
+        function getRandomElement(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+        function generateMockData() {
+            const count = parseInt(document.getElementById('rowCount').value) || 10;
+            const format = document.getElementById('outputFormat').value;
+            let result = [];
+
+            for (let i = 1; i <= count; i++) {
+                const fname = getRandomElement(firstNames);
+                const lname = getRandomElement(lastNames);
+                const email = `${fname.toLowerCase()}.${lname.toLowerCase()}@${getRandomElement(domains)}`;
+                
+                result.push({ id: i, name: `${fname} ${lname}`, email: email, status: Math.random() > 0.3 ? "Active" : "Inactive" });
+            }
+
+            if (format === 'json') {
+                document.getElementById('outputDisplay').value = JSON.stringify(result, null, 4);
+            } else {
+                let sql = "INSERT INTO users (id, name, email, status) VALUES\n";
+                let rows = result.map(r => `(${r.id}, '${r.name}', '${r.email}', '${r.status}')`);
+                sql += rows.join(",\n") + ";";
+                document.getElementById('outputDisplay').value = sql;
+            }
+        }
+
+        function downloadData() {
+            const format = document.getElementById('outputFormat').value;
+            const content = document.getElementById('outputDisplay').value;
+            if(!content) return alert("Generate data first!");
+            const blob = new Blob([content], {type: 'text/plain'});
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = format === 'json' ? 'mock_data.json' : 'mock_data.sql';
+            a.click();
+        }
+
+        function showModal(type) {
+            const modal = document.getElementById('modal');
+            const title = document.getElementById('modalTitle');
+            const text = document.getElementById('modalText');
+            if(type === 'policy') {
+                title.innerText = "Privacy Policy";
+                text.innerText = "This Mock Data Generator runs completely client-side. No configuration parameters, mock outputs, or browser metrics are processed outside your machine. We value data protection laws.";
+            } else {
+                title.innerText = "Terms of Service";
+                text.innerText = "Data generated here is entirely fictional and meant for software testing and mock simulation environments only. Use it at your own discretion.";
+            }
+            modal.style.display = 'flex';
+        }
+        function closeModal() { document.getElementById('modal').style.display = 'none'; }
+    </script>
+</body>
+</html>
